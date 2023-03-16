@@ -1,0 +1,174 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  background: #ffffff;
+  margin: 15px;
+  width: 340px;
+}
+
+.preview {
+  background: #f9fafd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 0px;
+  gap: 40px;
+}
+
+.layout-placeholder {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  color: #464b5b;
+  font-size: 18px;
+}
+
+.facebook,
+.instagram {
+  display: flex;
+  max-width: 400px;
+}
+
+/* CARDS */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid rgb(207, 206, 206);
+  padding: 15px;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.user {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.cardHeader img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.user div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardNameDate {
+  display: flex;
+  flex-direction: column;
+}
+.cardNameDate h3,
+p {
+  margin: 0px;
+}
+
+/* Middle */
+.cardMainImg,
+hr {
+  width: 100%;
+  max-height: 400px;
+}
+
+/* Bottom */
+.likes {
+  display: flex;
+  flex-direction: row;
+}
+.likes button {
+  border: none;
+  border-radius: 50px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.loadMore {
+  padding: 17px;
+  background-color: rgb(29, 126, 236);
+  color: white;
+  border-radius: 5px;
+}
+
+/* FORM */
+.accordion {
+  background: #e6ebff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.accordion-title {
+  color: #0033ff;
+  font-weight: 800;
+  font-size: 18px;
+  margin: 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+.form-control {
+  background-color: #ffffff;
+  border: 1px solid #d6dae4;
+  border-radius: 3px;
+  padding: 6px 12px;
+  height: 38px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input[type="radio"] {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+}
+
+.radio-select {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* MEDIA Q */
+@media (max-width: 992px) {
+  .layout-placeholder {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 768px) {
+  .layout-placeholder {
+    grid-template-columns: auto;
+  }
+}
