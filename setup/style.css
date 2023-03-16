@@ -40,6 +40,15 @@ body {
 }
 
 /* CARDS */
+.red {
+  filter: invert(13%) sepia(94%) saturate(7466%) hue-rotate(0deg)
+    brightness(94%) contrast(115%);
+}
+.blue {
+  filter: invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg)
+    brightness(87%) contrast(156%);
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -88,6 +97,7 @@ hr {
 .likes {
   display: flex;
   flex-direction: row;
+  gap: 5px;
 }
 .likes button {
   border: none;

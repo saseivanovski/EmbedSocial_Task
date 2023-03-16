@@ -106,13 +106,14 @@ document.addEventListener("click", function (e) {
   for (let i = 0; i < arrButtons.length && i < arrLikes.length; i++) {
     const value = arrLikes[i].innerHTML * 1;
     if (target === arrButtons[i]) {
-      if (arrHearts[i].style.backgroundColor === "lightgreen") {
+      if (arrHearts[i].style.backgroundColor === "transparent") {
         arrLikes[i].innerHTML = value - 1;
-        arrHearts[i].style.backgroundColor = "white";
+        arrHearts[i].style.backgroundColor = "";
+        arrHearts[i].classList.remove("red");
       } else {
         arrLikes[i].innerHTML = value + 1;
-        arrHearts[i].style.backgroundColor = "lightgreen";
-        arrHearts[i].style.borderRadius = "20px";
+        arrHearts[i].style.backgroundColor = "transparent";
+        arrHearts[i].classList.add("red");
       }
     }
   }
@@ -139,13 +140,22 @@ numbers.onchange = function () {
   }
 };
 
-// check screen to set layout
+let lightTheme = document.getElementById("lightTheme");
+let darkTheme = document.getElementById("darkTheme");
+
+// this is a workaround to check screen to set the layout
 setInterval(() => {
   checkScreen();
-}, 1000);
+}, 1);
 function checkScreen() {
   if (window.innerWidth < 992) {
     container.style.removeProperty("grid-template-columns");
+  }
+  if (lightTheme.checked) {
+    handleLight();
+  }
+  if (darkTheme.checked) {
+    handleDark();
   }
 }
 
@@ -163,25 +173,29 @@ bgColor.onchange = function () {
 let spaceBetween = document.getElementById("cardSpaceBetween");
 
 spaceBetween.onchange = function () {
-  layoutPlaceholder.style.gap = spaceBetween.value;
+  container.style.gap = spaceBetween.value;
 };
 
 // Choose Theme
-let lightTheme = document.getElementById("lightTheme");
-let darkTheme = document.getElementById("darkTheme");
-
 lightTheme.onchange = function () {
+  handleLight();
+};
+function handleLight() {
   for (let i = 0; i < arrCards.length; i++) {
     arrCards[i].style.backgroundColor = "white";
     arrCards[i].style.color = "black";
   }
-};
+}
 darkTheme.onchange = function () {
+  handleDark();
+};
+function handleDark() {
   for (let i = 0; i < arrCards.length; i++) {
     arrCards[i].style.backgroundColor = "black";
     arrCards[i].style.color = "white";
+    arrButtons[i].style.backgroundColor = "white";
   }
-};
+}
 
 // Filter By Source
 let instagram = document.getElementById("instagram");
